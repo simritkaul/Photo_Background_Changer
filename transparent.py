@@ -12,7 +12,7 @@ def convertImageBG(imagePath, savePath):
   newData = []
   
   for item in data:
-      if (item[0] < 20 and item[1] < 20 and item[2] < 20 and item[3] == 255):
+      if (item[0] <= 10 and item[1] <= 10 and item[2] <= 10 and item[3] == 255):
           newData.append((255, 255, 255, 0))
       else:
           newData.append(item)
