@@ -1,4 +1,5 @@
 from bgChanger import background_changer
+from grab_cut import grab_cut
 from segmentor import subjectExtractor
 from transparent import convertImageBG
 from watercolour import watercolourEffect
@@ -18,7 +19,7 @@ imagePath = os.path.join(currPath, f'images\subject\{imageList[0]}')
 """ Extracting name """
 name = imageList[0].split("/")[-1].split(".")[0]
 
-subjectExtractor(imagePath)
+subjectExtractor(imagePath, name)
 watercolourEffect(name)
 convertImageBG(f'remove_bg\{name}-watercolor.png', f'remove_bg\{name}-transparent.png')
 background_changer(f'remove_bg\{name}-transparent.png', name, pos_w, pos_h, scale)

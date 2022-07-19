@@ -2,9 +2,9 @@ import os
 import cv2
 
 def watercolourEffect(name):
-  masked_photo = cv2.imread('segmented_object_1.jpg', cv2.IMREAD_COLOR)
+  masked_photo = cv2.imread(f'remove_bg\{name}-grabcut.png', cv2.IMREAD_COLOR)
 
-  os.remove('segmented_object_1.jpg')
+  # os.remove(f'remove_bg\{name}-grabcut.png')
 
   image_cleared = cv2.medianBlur(masked_photo, 3)
   image_cleared = cv2.medianBlur(image_cleared, 3)
